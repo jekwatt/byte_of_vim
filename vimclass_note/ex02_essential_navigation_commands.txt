@@ -53,4 +53,3 @@ b - to move backward by word
 B - to move backward by word using white space as word boundaries
 
 e - to the end of the current word, INCLUDING the last character
-
