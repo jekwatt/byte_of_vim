@@ -1,0 +1,58 @@
+# Cut, Copy, and Paste (Delete, Yank, and Put)
+
+d and x cut text, not just delete it
+
+cut = delete and save into a register (unnamed/ default register)
+Register is a clipboard-like storage location.
+
+# Put (paste)
+p - to put previously deleted text after the cursor or after line
+P - to put before the cursor or before line
+
+# Swap lines
+ddp
+ddP
+
+# Fix spelling/typing mistakes by swapping characters
+xp - x to delete the character and
+     p to paste it after your current cursor Position
+
+From:
+teh
+
+To:
+the
+
+# Swap words
+dWWP
+
+Position your cursor at the beginning of the line under the "s" in the word second
+Delete it along with the comma that follows with the dW command (capital W).
+Next, position your cursor at the beginning of the word "third: by typing W.
+Put the text in the default register before your cursor position with the P command.
+
+From:
+second, First, third.
+
+To:
+First, second, third.
+
+# Copy
+y - yank
+[count]yw  or y[count]w - yank multiple words
+y$ - yank to the end of line
+[count]yy - yank entire line
+
+# Duplicate a line
+yyp
+yyP
+
+# Duplicate a word
+y[count]WP
+
+# Append the line to [register]
+"[uppercase of register]yy
+
+eg
+"Jyy  # append to the "j register
+
