@@ -1,0 +1,56 @@
+# Essential navigation commands
+
+gg - to move to the start of the file
+[count]gg - go to the line number
+
+G - to move to a line, to move to the bottom of the file
+[count]G - go to the line number
+
+:[count] - go to specific line
+
+eg
+Move to the 3rd line of the file.
+Remember, you can do this in a few different ways.
+
+3gg
+3G
+:3<ENTER>
+
+:$ - go to the last line
+
+# File status
+Ctrl-g - to show your location in the file and the file status
+gCtrl-g - more detailed information
+
+same as Ctrl-g
+:f
+:fi
+:file
+
+# Move screen
+Move to the top/middle/bottom of the screen
+H - High
+M - Middle
+L - Low
+
+Ctrl-f - forward, move forward one full screen
+Ctrl-b - backward, move back one full screen
+
+Ctrl-d - up, move forward 1/2 screen
+Ctrl-u - down, move back (up) 1/2 screen
+
+z<ENTER> -  move the text up on the view window while keeping the cursor on the same position
+
+# Short list of motions
+0 (zero) - to move to the start of the line
+^ - move to the first character of the line
+$ - to the end of the line, INCLUDING the last character
+
+w - to move forward by word
+W - to move forward by word using white space as word boundaries
+
+b - to move backward by word
+B - to move backward by word using white space as word boundaries
+
+e - to the end of the current word, INCLUDING the last character
+
