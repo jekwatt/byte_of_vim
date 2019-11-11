@@ -1,0 +1,66 @@
+# Insert text at the beginning of each line
+
+Step 1: Move the cursor to the line from where you would like to insert the text.
+
+Step 2: Hit Ctrl + V to enter into Visual Block and use cursor to select the first column till line where you want to stop inserting the text.
+
+Step 3: Hit Shift + i to enter into insert mode. Type text you would like to insert and hit ESC. You will see the text being insert automatically to all the lines selected in Step 2.
+
+# Insert mode
+i - insert mode right at your current cursor position
+I - insert text a the very beginning of the line
+a - append text after the cursor position
+A - append text to the end of the line
+o - insert mode on the line below the current line
+O - insert mode on the line above the current line
+
+eg
+# Create a line of 80 asterisks
+80i*
+
+# Create 5 lines that begin with "#"
+5o#
+
+# Create 4 lines that begin with "10.11.12."
+4o10.11.12.
+
+# Replace mode
+r - to replace the character at the cursor
+R - to replace multiple characters
+
+# Change mode
+Useful when changing to a word with different length
+cw - change a word
+c[count]w - change single word to multiple words or line
+
+# Change until the next underscore
+cf_ - if want to include the _
+dt_ - if don't want to include the _
+
+# Change word and save in a register ("a)
+"acw
+
+ce - to change until the end of a word, delete the word and put in insert mode
+c$ or C - to change until the end of a line
+
+cc - change entire line
+[count]dd - change multiple lines
+
+# Join using the J command
+[count]J
+
+Your cursor anywhere on the first line, hit J.
+Notice that a space was appended to the end of the current line and line below got moved up.
+If there is already a space at the end of the line, it will not add an additional space.
+Also if the line ends with a period then the uppercase J command will append two spaces to the end of the line.
+
+# Don't want additional space
+gJ
+
+eg
+From:
+3.
+4159
+
+To:
+3.4159  # no spaces after the period
