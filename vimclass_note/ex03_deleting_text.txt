@@ -1,0 +1,41 @@
+# Deleting text
+
+Practice the [count][operator]{motion} pattern.
+
+x - to delete the character at the cursor
+X - delete character to left
+
+dd - delete line
+[count]dd - delete multiple lines
+:d - delete line
+
+dw - to delete a word
+d[count]w - to delete words
+
+eg
+From:
+fo[o]bar baz
+
+To:
+fo[b]az
+
+dW - to delete a WORD
+d[count]W - to delete multiple WORDs
+
+db
+dB
+
+de - cut from here to the end of the current word, space will be reserved
+
+eg
+From:
+fo[o]bar baz
+
+To:
+fo[ ]baz
+
+d$ - to delete to the end of the line 
+D  # same as d$, shorter version
+
+# Repeat
+. - repeat the last command
