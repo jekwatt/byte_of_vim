@@ -11,50 +11,12 @@ dt{char} - delete til the character
 ; - to repeat your line-wise search
 , - to repeat your search in the opposite direction
 
-# Search within the file
-/{pat} - to search for the pattern
-
-
-is for incremental search (incsearch)
-To check, type
-:set is?
-
-To turn on incsearch:
-:set is
-
-To turn off incsearch:
-:set nois
-
-# Highlight search option
-hls / hlsearch
-:set hls?
-:set hls
-:nohls
-
-?{pat} - to search for a pattern in the backward direction
-
-n - to search for the same pattern again, repeat
-N - to search for the same pattern in the opposite direction
-
-# Search for a word
-* - forward search for a word,
-    find the next occurrence of the word under or near the cursor
-    Search forward for th occurrence of the word nearest to the cursor
-
-#(pound) - same as "*", but backward search for a word
-    find the previous occurrence of the word under or near the cursor
-
-Ctrl-O (letter) - takes back to older positions
-Ctrl-I - to newer positions
-% while the cursor is on a (,),[,],{, or } - goes to its match, 
-    useful in debugging a program with unmatched parentheses!
-
 # Replace a sting in current line
 :s/old/new - change the first occurrence in the line
 :s/old/new/[flags]
-:s/old/new/g - g flag means to substitute globally in the line, 
-    change all occurrence in the line
+:s/old/new/g
 
+# Range
 :[range]s/old/new/[flags]
 :#,#s/old/new/g - to change every occurrence of a character between two lines
 
@@ -62,15 +24,59 @@ eg
 # Remove tabs from multiple lines:
 :1,$s/\t/  /g
 
-# Replace a string across a file
-% = 1, $ - every occurrence
-:%s/old/new/g - to replace a string across a file
-:%s/old/new/gc - with a prompt whether to substitute or not
+# Add # followed by a whitespace in range of lines
+:[line#],[line#]s!^!\# !
+
+# Search within the file
+/{pat} - search forward for pattern
+?{pat} - search backward
+n - repeat forward search
+N - repeat backward
+
+# Search for a word
+* - forward search for a word,
+    find the next occurrence of the word under or near the cursor,
+    Search forward for the occurrence of the word nearest to the cursor
+
+#(pound) - same as "*", but backward search for a word,
+    find the previous occurrence of the word under or near the cursor
+
+Ctrl-O (letter) - takes back to older positions
+Ctrl-I - to newer positions
+% while the cursor is on a (,),[,],{, or } - goes to its match, 
+    useful in debugging a program with unmatched parentheses!
+
+# Search and replace across a file
+[% = 1, $]
+:%s/old/new/ - search whole file and replace
+:%s/old/new/g - global replace
+:%s/old/new/c - confirm each replace
+:%s/old/new/gc - global replace with confirm
 
 # Search & replace a string with a space
 :%s/old string/new string/g
 eg
 :%s/qc only/internal qc only/g
 
-# Add # followed by a whitespace in range of lines
-:[line#],[line#]s!^!\# !
+# Some variables you might want to set:
+
+# Incremental search (incsearch)
+:set is? - is for incsearch?
+:set incsearch  - turn on incsearch (show match as search proceeds)
+:set is - short format
+:set nois - turn off incsearch
+
+# Highlight search option (hls / hlsearch)
+:set hls?
+:set hlsearch   - search highlighting
+:set hls - short format
+:nohls
+:set ignorecase - case insensitive
+:set smartcase  - use case if any caps used
+
+# More cool searching tricks:
+* - search for word currently under cursor
+g* - search for partial word under cursor (repeat with n)
+
+ctrl-o, ctrl-i - go through jump locations
+[I - show lines with matching word under cursor
