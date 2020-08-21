@@ -1,0 +1,30 @@
+# Change case in vim
+
+# Visual select the text, 
+then U for uppercase or u for lowercase.
+To swap all casing in a visual selection, press ~
+
+# Without using a visual selection 
+gu<motion> - for lowercase
+gU<motion> - will make the characters in motion uppercase
+
+~  - changes the case of current character
+
+# Invert case of entire line
+g~$ 
+g~~ (same as g~$)
+
+guw - change a word to lower
+g~w - change a word to lower
+
+gUw - change a word to upper
+g~W - change a word to upper
+
+guu - change current line to lower
+gUU - change current line to upper
+
+# TODO: fix
+guaw - change all of current WORD to lower
+gUaW - change all of current WORD to upper
+
+guG - change to lowercase until the end of document
