@@ -1,0 +1,29 @@
+# Add, remove blank lines
+
+# Alt = option
+Alt-j - inserts a blank line below the current line
+Alt-k - inserts a blank line above the current line
+
+Ctrl-j - deletes the line below the current line, if it is blank
+Ctrl-k - deletes the line above the current line, if it is blank
+
+# \s finds whitespace (a space or a tab)
+# \+ finds one or more occurrences
+# e flag means no error is displayed
+
+# Add a whitespace at the beginning in range (multiple lines)
+:7,21s/^/ /
+:7,21s/^/ /g
+
+# Remove any leading whitespace at the beginning of each line
+:%s/^ \+//
+:%s/\s\+//e
+
+# Remove blank spaces at the start of lines in range (multiple lines)
+:7,21s/^ \+//
+
+# Remove any trailing whitespace at the end of each line
+:%s/\s\+$//e
+
+# All tabs become four spaces; convert tabs to spaces
+:1,$s/\t/    /g  # four spaces here

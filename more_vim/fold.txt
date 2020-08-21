@@ -1,0 +1,21 @@
+" open with NERDTree
+vim package.json
+NERDTree
+NERDTreeClose
+NERDTreeToggle
+
+:set cuc # set cursorcolumn
+:set cul # set cursorline
+
+" to copy actual text
+:set nonu nolist foldcolumn=0
+
+:fold help
+:help folding
+
+:zc # to close the fold
+:zo # to open the fold
+:zC # to close recursively
+:zO # to open all recursively
+
+:help mapping

@@ -1,0 +1,14 @@
+# Undo
+u - undo last change (can be repeated to undo preceding commands)
+:u[ndo] - undo one change
+
+# Redo
+Ctrl-r (hold down Ctrl and press r) - redo changes which were undone (undo the undos)
+:red[o] - redo one change witch was undone
+
+
+# Related command
+U - return the last line which was modified to its original state (reverse all changes in last modified line), does not actually navigate undo history like u and Ctrl-r, U is itself undo-able with u
+
+# Repeat
+. - repeat last change, with count replaced with [count]
