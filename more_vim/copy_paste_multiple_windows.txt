@@ -1,0 +1,13 @@
+# Copy and paste with multiple windows
+
+It sounds like you're trying to paste text that already has indents included, and vim is auto-indenting and that's messing with the format.
+  
+# Run this before you paste
+:set paste
+
+That should disable the auto-indenting that's messing with the paste.  
+
+# Then re-enable auto-indenting with
+:set nopaste
+
+You can also bind "pastetoggle" to a key so you can turn paste on and off with a keypress.
