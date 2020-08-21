@@ -1,0 +1,49 @@
+# Split window
+
+Starting vim with a -o or -O flag opens each file in its own split
+vim -o  # horizonal
+vim -O  # vertical
+
+https://vim.fandom.com/wiki/Resize_splits_more_quickly
+
+# Resize splits more quickly, to change the height of the window
+:resize [COUNT]
+:res
+
+eg
+:resize 60
+
+# Change the height in increments
+:res +5
+:res -5
+
+# Vertical resize
+:vertical resize 80
+:vertical resize +5
+:vertical resize -5
+
+# Resize the height of the current window by a single row
+Ctrl-w +  # type Ctrl-w, let go of Ctrl followed by +
+Ctrl-w - 
+
+For a vsplit window: 
+You can use Ctrl-w > and Ctrl-w < to resize the width of the current window by a single column. 
+
+Additionally, these key combinations accept a count prefix so that you can change the window size in larger steps. 
+eg 
+Ctrl-w 10 + increases the window size by 10 lines
+
+# Resize all windows to equal dimensions based on their splits, 
+Ctrl-w =
+
+# Increase a window to its maximum height, 
+Ctrl-w _
+
+# Increase a window to its maximum width, 
+Ctrl-w |
+
+# Rotate to right
+Ctrl-w r
+
+# Rotate to opposite direction
+Ctrl-w R
