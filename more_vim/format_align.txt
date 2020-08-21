@@ -1,0 +1,19 @@
+# Set cursor
+:set cuc # set cursorcolumn
+:set cul # set cursorline
+
+# Format a line to the left
+:left
+
+# Format an entire file:
+:%le
+
+# Show ruler
+:set ruler
+
+# Set ruler off
+:set noruler
+
+# Toggle ruler
+:set ruler!
+
