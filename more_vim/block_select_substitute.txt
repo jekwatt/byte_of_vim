@@ -1,0 +1,22 @@
+# Insert a character of multiple lines where the line length varies
+
+Q:
+Is there a way in vim that I can block select and insert a character for multiple lines where the line length varies.
+
+I will need to add a closing parenthesis before the comma in each test case.
+
+Here is my toy example.
+
+test_case = [
+    (1: "yes",
+    (2: "no",
+    (3: "something else",
+]
+
+A:
+Given that you have a pattern you can use, the best way to do it would be to select the block and then use substitution from there.
+
+If you have those lines in a visual block, for example, then hit ":", then the range of that block will be inserted for you ('<,'>).
+Leave that in place and you can use substitution to perform the the replacement for commas at the end of lines (assuming there aren't spaces after the commas):
+
+:'<,'>s/,$/),/g
