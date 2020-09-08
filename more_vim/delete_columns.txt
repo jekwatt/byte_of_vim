@@ -14,7 +14,10 @@ To delete columns 10-12 from the current row to the end of the file:
 
 :.,$!colrm 10-12
 
-The above commands only work in vim, which is standard Linux; regular vi, as found on most commercial Unix implementations, doesn't have the colrm command. To delete columns 10-12 in vi, it is easiest to identify the characters that make up columns 10-12 and delete them using a pattern match. Using this character line as example:
+The above commands only work in vim, which is standard Linux; regular vi, as found on most commercial Unix implementations, doesn't have the colrm command.
+To delete columns 10-12 in vi, it is easiest to identify the characters that make up columns 10-12 and delete them using a pattern match.
+
+Using this character line as example:
 
 abcdefghijklmnopqrstuvwxyz
 12345678901234567890123456
@@ -27,6 +30,9 @@ Of course, if the 10-12 characters are not the same on all lines, this will not 
 
 :%s/\(^.\{9}\).\{3}/\1/
 
-The above says take the first nine characters and the next three characters and replace them with just the first nine characters. The parentheses, which must be escaped, assign the first nine characters to the first backreference, which is then recalled in replacement part with the \1 (there can be more than one backreference). Since there's no mention of the three characters after the backreference, those characters are removed.
+The above says take the first nine characters and the next three characters and replace them with just the first nine characters.
+The parentheses, which must be escaped, assign the first nine characters to the first backreference,
+which is then recalled in replacement part with the \1 (there can be more than one backreference).
+Since there's no mention of the three characters after the backreference, those characters are removed.
 
 Note that you can use colons (:) instead of forward-slashes (/) which might be easier to read.
