@@ -1,0 +1,15 @@
+
+# Column (block) insert/delete on VIM
+
+# Block insert
+
+1. Move the cursor to the uppermost character (if you’re selecting lines the way down, bottom if you’re going up) before which you want to insert text
+2. Enter Visual Block Mode by pressing Ctrl+v (unless you mapped the paste action to it, in which case you probably already know how to column insert)
+3. Select the column using the arrow keys
+4. Press Shift+i (switching into Insert Mode)
+5. Type the text you want to insert (will be displayed only on the first line)
+6. Press esc two times
+
+# Block delete
+
+In case you want to delete text, follow steps 1 through 3 and simply select all text you wish to delete, then press x and you’re done!
